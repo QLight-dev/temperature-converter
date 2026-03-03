@@ -12,7 +12,7 @@ func TestFahrenheitToCelsius(t *testing.T) {
 		{name: "negative", got: FahrenheitToCelsius(-65.0), want: (-65.0 - 32.0) * 5/9},
 	}
 
-	for _, tt in range tests {
+	for _, tt := range tests {
 		t.Run(tt.Name, func(t *testing.T) {
 			if got != want {
 
