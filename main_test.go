@@ -15,7 +15,10 @@ func TestFahrenheitToCelsius(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			got := FahrenheitToCelsius(test.input)
-			if got != test.want {
+
+			// floating-point arithmetic won't be exact, so we check if its close enough to the expected value
+			delta := 0.0001
+			if got < test.want-delta || got > test.want+delta {
 				t.Errorf("input: %v, got: %v, want: %v", test.input, got, test.want)
 			}
 		})
@@ -35,6 +38,7 @@ func TestFahreheitToKelvin(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			got := FahreheitToKelvin(test.input)
+
 			// floating-point arithmetic won't be exact, so we check if its close enough to the expected value
 			delta := 0.0001
 			if got < test.want-delta || got > test.want+delta {
