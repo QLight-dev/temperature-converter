@@ -25,7 +25,7 @@ func TestFahrenheitToCelsius(t *testing.T) {
 	}
 }
 
-func TestFahreheitToKelvin(t *testing.T) {
+func TestFahrenheitToKelvin(t *testing.T) {
 	tests := []struct {
 		name  string
 		input float64
@@ -37,7 +37,7 @@ func TestFahreheitToKelvin(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			got := FahreheitToKelvin(test.input)
+			got := FahrenheitToKelvin(test.input)
 
 			// floating-point arithmetic won't be exact, so we check if its close enough to the expected value
 			delta := 0.0001
