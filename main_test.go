@@ -12,10 +12,11 @@ func TestFahrenheitToCelsius(t *testing.T) {
 		{name: "negative", input: -65.6, want: (-65.6 - 32.0) * 5/9},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.Name, func(t *testing.T) {
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			got := FahrenheitToCelsius(test.input)
 			if got != want {
-
+				t.Errorf("input: %v, got: %v, want: %v", test.input, got, test.want)
 			}
 		})
 	}
