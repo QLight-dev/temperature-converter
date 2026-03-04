@@ -9,6 +9,12 @@ const (
 func FahrenheitToCelsius(temperature float64) float64 {
 	return (temperature - freezingF) * factor
 }
+
+const (
+	kelvinAbsoluteZeroPoint = 273.15
+)
+
+// converts Fahrenheit temperatures into Kelvin
 func FahreheitToKelvin(temperature float64) float64 {
-	return (temperature-32.0)*5/9 + 273.15
+	return FahrenheitToCelsius(temperature) + kelvinAbsoluteZeroPoint
 }
