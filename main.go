@@ -15,6 +15,6 @@ const (
 )
 
 // converts Fahrenheit temperatures into Kelvin
-func FahreheitToKelvin(temperature float64) float64 {
+func FahrenheitToKelvin(temperature float64) float64 {
 	return FahrenheitToCelsius(temperature) + kelvinAbsoluteZeroPoint
 }
